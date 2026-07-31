@@ -2,6 +2,12 @@
 
 int CalculateTicketPrice(int iAge)
 {
+    // Input Updator
+    if(iAge < 0)
+    {
+        iAge = -iAge;
+    }
+
     if(iAge >= 0 && iAge <=5)
     {
         return 0;

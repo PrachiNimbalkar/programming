@@ -1,7 +1,16 @@
 #include<stdio.h>
 
+// User defoned macro
+#define AGE_INVAID -1
+
 int CalculateTicketPrice(int iAge)
 {
+    // Input Filter
+    if(iAge < 0)
+    {
+        return AGE_INVAID;
+    }
+
     if(iAge >= 0 && iAge <=5)
     {
         return 0;
@@ -30,7 +39,14 @@ int main()
 
     iRet = CalculateTicketPrice(iValue);
 
-    printf("Your ticket price will be %d ruppes\n",iRet);
-
+    if(iRet == AGE_INVAID)
+    {
+        printf("Please enter positive Age\n");
+    }
+    else
+    {
+        printf("Your ticket price will be %d ruppes\n",iRet);
+    }
+    
     return 0;
 }

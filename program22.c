@@ -2,6 +2,12 @@
 
 int CalculateTicketPrice(int iAge)
 {
+    // Input Filter
+    if(iAge < 0)
+    {
+        return -1;
+    }
+
     if(iAge >= 0 && iAge <=5)
     {
         return 0;
@@ -30,7 +36,14 @@ int main()
 
     iRet = CalculateTicketPrice(iValue);
 
-    printf("Your ticket price will be %d ruppes\n",iRet);
-
+    if(iRet == -1)
+    {
+        printf("Please enter positive Age\n");
+    }
+    else
+    {
+        printf("Your ticket price will be %d ruppes\n",iRet);
+    }
+    
     return 0;
 }

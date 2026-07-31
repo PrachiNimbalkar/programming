@@ -2,6 +2,12 @@
 
 int CalculateTicketPrice(int iAge)
 {
+    // Input Filter
+    if(iAge < 0)
+    {
+        return -1;
+    }
+
     if(iAge >= 0 && iAge <=5)
     {
         return 0;
